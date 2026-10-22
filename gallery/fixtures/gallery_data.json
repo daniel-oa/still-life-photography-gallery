@@ -1,0 +1,75 @@
+[
+{
+  "model": "gallery.category",
+  "pk": 1,
+  "fields": {
+    "name": "Everyday Objects",
+    "description": "Photographs of ordinary objects and quiet moments."
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 1,
+  "fields": {
+    "title": "A Quiet Read",
+    "description": "A collection of books arranged on a table.",
+    "image": "photos/Book_still_photography.jpg",
+    "category": 1,
+    "photographer": "Praveenapraviii",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Book_still_photography.jpg",
+    "date_added": "2026-10-22T23:09:07.017Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 2,
+  "fields": {
+    "title": "A Study Break",
+    "description": "A mug of hot chocolate beside a book and notepad.",
+    "image": "photos/Studying_with_hot_chocolate.jpg",
+    "category": 1,
+    "photographer": "Punker1999",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Studying_with_hot_chocolate.jpg",
+    "date_added": "2026-10-22T23:13:36.160Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 3,
+  "fields": {
+    "title": "Objects on Display",
+    "description": "Everyday objects displayed at the Vietnamese Women's Museum in Hanoi.",
+    "image": "photos/Everyday_objects_-_Vietnamese_Womens_Museum_-_Hanoi_Vietnam_-_DSC04194.jpg",
+    "category": 1,
+    "photographer": "Daderot",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Everyday_objects_-_Vietnamese_Women%27s_Museum_-_Hanoi,_Vietnam_-_DSC04194.JPG",
+    "date_added": "2026-10-22T23:16:18.919Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 4,
+  "fields": {
+    "title": "Morning Coffee",
+    "description": "A cup of coffee photographed in black and white.",
+    "image": "photos/Cup_of_life.jpg",
+    "category": 1,
+    "photographer": "Noobshots",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cup_of_life.jpg",
+    "date_added": "2026-10-22T23:17:34.892Z"
+  }
+},
+{
+  "model": "gallery.photo",
+  "pk": 5,
+  "fields": {
+    "title": "Fruit Bowl",
+    "description": "A bowl and a plate of assorted fruit arranged on a table, alongside a vase of flowers.",
+    "image": "photos/Fruit_bowl_Ehrenbach.jpg",
+    "category": 1,
+    "photographer": "Gerda Arendt",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fruit_bowl,_Ehrenbach.jpg",
+    "date_added": "2026-10-22T23:20:46.330Z"
+  }
+}
+]

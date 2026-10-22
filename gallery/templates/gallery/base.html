@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f2eb">
+    <title>{% block title %}Still Life — A Visual Journal{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'gallery/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" href="{% url 'gallery:home' %}">
+            still<span>.</span>life
+        </a>
+
+        <nav>
+            <a href="{% url 'gallery:home' %}">The Gallery</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <span class="header-note">AN EVERYDAY PHOTO JOURNAL</span>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer" id="about">
+        <a class="footer-logo" href="{% url 'gallery:home' %}">still.life</a>
+        <p>Finding something worth noticing in the everyday.</p>
+        <span>AN ONGOING COLLECTION · 2026</span>
+    </footer>
+</body>
+</html>

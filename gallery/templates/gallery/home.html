@@ -1,0 +1,70 @@
+{% extends "gallery/base.html" %}
+
+{% block title %}The Gallery — Still Life{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-topline">
+        <span>VOL. 01</span>
+        <span>THE ART OF NOTICING</span>
+    </div>
+
+    <h1>Ordinary things.<br><em>Extraordinary details.</em></h1>
+
+    <div class="hero-bottom">
+        <p>
+            A collection of photographs exploring the quiet character
+            of everyday objects, familiar spaces, and simple moments.
+        </p>
+
+        <div class="collection-count">
+            <span class="count-number">{{ photos|length }}</span>
+            <span class="count-label">PHOTOGRAPHS<br>IN THE COLLECTION</span>
+        </div>
+    </div>
+</section>
+
+<section class="gallery-section">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">THE COLLECTION</span>
+            <h2>Collected moments</h2>
+        </div>
+        <span class="section-index">01 — 05</span>
+    </div>
+
+    <div class="photo-grid">
+        {% for photo in photos %}
+            <a class="photo-card" href="{% url 'gallery:photo_detail' photo.pk %}">
+                <div class="photo-image">
+                    <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+                    <span class="image-arrow">↗</span>
+                </div>
+
+                <div class="photo-info">
+                    <div>
+                        <h3>{{ photo.title }}</h3>
+                        {% if photo.category %}
+                            <p>{{ photo.category.name }}</p>
+                        {% endif %}
+                    </div>
+                    <span class="photo-number">
+                        {{ forloop.counter|stringformat:"02d" }}
+                    </span>
+                </div>
+            </a>
+        {% empty %}
+            <p class="empty-message">
+                The collection is waiting for its first photograph.
+            </p>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="closing-note">
+    <span class="eyebrow">A NOTE ON THE COLLECTION</span>
+    <p>
+        Not everything needs to be extraordinary to be worth a closer look.
+    </p>
+</section>
+{% endblock %}

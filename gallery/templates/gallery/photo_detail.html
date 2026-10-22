@@ -1,0 +1,55 @@
+{% extends "gallery/base.html" %}
+
+{% block title %}{{ photo.title }} — Still Life{% endblock %}
+
+{% block content %}
+<section class="detail-section">
+    <a class="back-link" href="{% url 'gallery:home' %}">
+        <span>←</span> Back to the collection
+    </a>
+
+    <div class="detail-heading">
+        <span class="eyebrow">FROM THE COLLECTION</span>
+        <h1>{{ photo.title }}</h1>
+        {% if photo.category %}
+            <span class="detail-category">{{ photo.category.name }}</span>
+        {% endif %}
+    </div>
+
+    <div class="detail-image">
+        <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+    </div>
+
+    <div class="detail-caption">
+        <div class="caption-main">
+            <span class="eyebrow">THE STORY</span>
+            {% if photo.description %}
+                <p>{{ photo.description }}</p>
+            {% endif %}
+        </div>
+
+        <div class="caption-meta">
+            {% if photo.photographer %}
+                <div class="meta-item">
+                    <span>PHOTOGRAPHER</span>
+                    <p>{{ photo.photographer }}</p>
+                </div>
+            {% endif %}
+
+            {% if photo.source_url %}
+                <div class="meta-item">
+                    <span>IMAGE SOURCE</span>
+                    <a href="{{ photo.source_url }}"
+                       target="_blank"
+                       rel="noopener noreferrer">View original ↗</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="detail-bottom">
+        <span>STILL LIFE · VISUAL JOURNAL</span>
+        <a href="{% url 'gallery:home' %}">Explore the collection →</a>
+    </div>
+</section>
+{% endblock %}
