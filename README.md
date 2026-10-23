@@ -4,7 +4,6 @@
 A Django-based photography gallery showcasing still-life photography. Visitors can browse a collection of photographs and open individual images to view their descriptions and details.
 
 **Live Demo:** https://still-life-photography-gallery.onrender.com  
-**Repository:** https://github.com/daniel-oa/still-life-photography-gallery
 
 ## Features
 
