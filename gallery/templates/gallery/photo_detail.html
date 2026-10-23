@@ -1,4 +1,6 @@
 {% extends "gallery/base.html" %}
+{% load static %}
+
 
 {% block title %}{{ photo.title }} — Still Life{% endblock %}
 
@@ -17,7 +19,10 @@
     </div>
 
     <div class="detail-image">
-        <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+        <img
+            src="{% static 'gallery/photos/' %}{{ photo.image.name|cut:'photos/' }}"
+            alt="{{ photo.title }}"
+        >
     </div>
 
     <div class="detail-caption">

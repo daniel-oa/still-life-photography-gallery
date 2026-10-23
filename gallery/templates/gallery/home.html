@@ -1,4 +1,6 @@
 {% extends "gallery/base.html" %}
+{% load static %}
+
 
 {% block title %}The Gallery — Still Life{% endblock %}
 
@@ -37,7 +39,10 @@
         {% for photo in photos %}
             <a class="photo-card" href="{% url 'gallery:photo_detail' photo.pk %}">
                 <div class="photo-image">
-                    <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+                    <img
+                        src="{% static 'gallery/photos/' %}{{ photo.image.name|cut:'photos/' }}"
+                        alt="{{ photo.title }}"
+                    >
                     <span class="image-arrow">↗</span>
                 </div>
 
