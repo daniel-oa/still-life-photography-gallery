@@ -1,80 +1,128 @@
 
-# Still Life — Still Life Photography Gallery
+# Still Life — Photography Gallery
 
-Still Life is a photography gallery built with Django. It presents photographs in a simple, editorial-style layout, with individual pages for viewing each photograph and its details.
+A Django-based photography gallery showcasing still-life photography. Visitors can browse a collection of photographs and open individual images to view their descriptions and details.
+
+**Live Demo:** https://still-life-photography-gallery.onrender.com  
+**Repository:** https://github.com/daniel-oa/still-life-photography-gallery
 
 ## Features
 
-- Browse photographs in a responsive gallery.
-- View individual photographs and their descriptions.
-- Organise photographs by category.
-- Display photographer information and source links.
-- Add and manage photographs and categories through Django's admin panel.
+- Photography gallery homepage
+- Individual photo detail pages
+- Photo descriptions and photographer credits
+- Photo categories
+- Django admin interface for managing photos and categories
+- Responsive layout for different screen sizes
 
-## Built With
+## Technologies Used
 
 - Python
 - Django
+- SQLite
 - HTML
 - CSS
-- SQLite
 - Pillow
+- Gunicorn
+- WhiteNoise
+- Render
 
 ## Running Locally
 
-1. Clone this repository:
+### 1. Clone the repository
 
-   ```bash
-   git clone <repository-url>
-   cd still-life-photography-gallery
-   ```
+```bash
+git clone https://github.com/daniel-oa/still-life-photography-gallery.git
+cd still-life-photography-gallery
+```
 
-2. Create and activate a virtual environment:
+### 2. Create and activate a virtual environment
 
-   ```bash
-   python -m venv .venv
-   ```
+```bash
+python -m venv .venv
+```
 
-   Windows:
+On Windows:
 
-   ```bash
-   .venv\Scripts\activate
-   ```
+```bash
+.venv\Scripts\activate
+```
 
-3. Install the dependencies:
+### 3. Install dependencies
 
-   ```bash
-   python -m pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-4. Create the database tables:
+### 4. Prepare the database
 
-   ```bash
-   python manage.py migrate
-   ```
+```bash
+python manage.py migrate
+python manage.py loaddata gallery_data
+```
 
-5. Create an administrator account:
+The fixture loads the sample photo and category records into the database.
 
-   ```bash
-   python manage.py createsuperuser
-   ```
+### 5. Start the development server
 
-6. Start the development server:
+```bash
+python manage.py runserver
+```
 
-   ```bash
-   python manage.py runserver
-   ```
+Open http://127.0.0.1:8000/ in your browser.
 
-7. Open `http://127.0.0.1:8000/` in your browser.
+### 6. Access the admin interface (optional)
 
-   To manage photographs and categories, visit `http://127.0.0.1:8000/admin/`.
+Create an administrator account:
 
-## Photograph Content
+```bash
+python manage.py createsuperuser
+```
 
-The gallery uses photographs sourced from Wikimedia Commons. The photographs selected for this project were identified as being released under CC0 1.0. Individual source links and photographer information are recorded in the gallery where available.
+Then visit http://127.0.0.1:8000/admin/.
 
-Uploaded photographs are stored locally in the `media/` directory. The local SQLite database is not included in this repository, so a fresh setup requires adding gallery entries through the admin panel.
+## Project Structure
 
-## Acknowledgements
+```text
+still-life-photography-gallery/
+├── config/
+├── gallery/
+│   ├── fixtures/
+│   │   └── gallery_data.json
+│   ├── static/
+│   │   └── gallery/
+│   │       └── photos/
+│   ├── templates/
+│   │   └── gallery/
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── Procfile
+├── requirements.txt
+└── README.md
+```
 
-AI tools were used to generate the HTML templates and CSS styling. The Django application setup, models, views, URL routing, database migrations, and admin configuration were developed as part of my learning process with AI assistance.
+## Image Credits
+
+The gallery uses photographs sourced from Wikimedia Commons and credited to their respective creators:
+
+- **A Quiet Read** — Praveenapraviii
+- **A Study Break** — Punker1999
+- **Objects on Display** — Daderot
+- **Morning Coffee** — Noobshots
+- **Fruit Bowl** — Gerda Arendt
+
+The photographs were identified as public-domain/CC0 contributions. Please consult each original Wikimedia Commons file page for its specific licensing details.
+
+## Deployment
+
+The application is deployed on Render. Django migrations and static-file collection are performed during deployment, and the sample gallery data is loaded from the included fixture.
+
+## AI Assistance
+
+AI tools were used to assist with writing the HTML templates and CSS styling. The project was configured, tested, and deployed as a Django application.
+
+## Purpose
+
+This project was developed as a practical exercise in building and deploying a web application using Django.
